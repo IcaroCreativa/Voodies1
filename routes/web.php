@@ -4,10 +4,10 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Auth\Events\Registered;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\IndexController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CategoryController;
-<<<<<<< HEAD
 use App\Http\Controllers\UserPostController;
 use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\VerifyEmailController;
@@ -32,11 +32,6 @@ Route::post('reset-password', [NewPasswordController::class, 'store'])
  ->name('password.update');
 
 Route::get('/', [IndexController::class,'index']);
-=======
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\AuthenticatedSessionController;
-
->>>>>>> parent of aa25699 (Interface login et mot de passe oublié avec envoie de mail pour reset . Manque styliser le mail envoyé!)
 Route::get('index',[PostController::class,'index'])->name('home');
 
 Route::view('about','about')->name('about');
@@ -44,6 +39,7 @@ Route::view('/register','auth.register')->name('register');
 
 Route::view('/login','auth.login')->name('login');
 Route::post('/login',[AuthenticatedSessionController::class,'store']);
+Route::post('/logout',[AuthenticatedSessionController::class,'destroy'])->name('logout');
 
 
 Route::view('/zip','zip')->middleware('auth')->name('zip');
@@ -53,17 +49,12 @@ Route::get('create_post',[CityController::class, 'show'])->middleware('auth')->n
 Route::post('/index', [PostController::class, 'create'])->middleware('auth')->name('registro');
 
 Route::get('/{ad}',[PostController::class,'show']);
-<<<<<<< HEAD
 
 Route::view('contact','contact')->name('contact');
 Route::post('contact',[ContactController::class,'store'])->name('contact');
-=======
-Route::post('contact',[ContactController::class,'index'])->name('contact');
->>>>>>> parent of aa25699 (Interface login et mot de passe oublié avec envoie de mail pour reset . Manque styliser le mail envoyé!)
 
 
 Route::post('/register',[RegisteredUserController::class,'store']);
-<<<<<<< HEAD
 
 
 
@@ -92,5 +83,3 @@ Route::post('/logout',[AuthenticatedSessionController::class,'destroy'])->name('
 
 
 });
-=======
->>>>>>> parent of aa25699 (Interface login et mot de passe oublié avec envoie de mail pour reset . Manque styliser le mail envoyé!)

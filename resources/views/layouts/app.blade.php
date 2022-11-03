@@ -26,7 +26,6 @@
         {{$dashboard ?? ''}}
         {{$message ?? ''}}
 
-<<<<<<< HEAD:resources/views/layouts/app.blade.php
     
 {{-- ----------------------alert---------------------------------------- --}}
         @if(session('status'))
@@ -67,61 +66,6 @@
             </script>
           @endif
     
-=======
-    {{-- -----------ALERT------------------ --}}
-
-    @if(session('ad_created'))
-      <div class=" bg-slate-800 bg-opacity-50  flex h-screen justify-center items-center absolute top-0 right-0 bottom-0 left-0">
-        <div role="alert" class="rounded-xl w-1/2  mx-auto border bg-white border-gray-100 p-4 shadow-xl">
-          <div class="flex items-start gap-4">
-            <span class="text-green-600">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="h-6 w-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-            </span>
-        
-            <div class="flex-1">
-              <strong class="block font-medium text-gray-900"> Changes saved </strong>
-        
-              <p class="mt-1 text-sm text-gray-700">
-                {{session('ad_created')}}
-              </p>
-            </div>
-        
-            <button onclick="myFunction()" class="text-gray-500 transition hover:text-gray-600">
-              <span class="sr-only">Dismiss popup</span>
-        
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1.5"
-                stroke="currentColor"
-                class="h-6 w-6"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-      @endif
->>>>>>> parent of aa25699 (Interface login et mot de passe oublié avec envoie de mail pour reset . Manque styliser le mail envoyé!):resources/views/components/layouts/app.blade.php
         
       
 
@@ -368,15 +312,9 @@
               const desktopScreen = window.innerWidth < 768
               document.querySelector('details').open = !desktopScreen
             })
-
-            function myFunction() 
-            {
-              location.replace({{route('login')}})
-            }
-
           </script>
 
-        
+
             
     </body>
     
